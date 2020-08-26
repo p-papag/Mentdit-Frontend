@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { SignupRequestPayload } from '../signup/signup-request.payload';
 import { Observable } from 'rxjs';
@@ -11,6 +11,9 @@ import { map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+  @Output() loggedIn: EventEmitter<boolean> = new EventEmitter();
+  @Output() username: EventEmitter<string> = new EventEmitter();
+
   refreshToken() {
       throw new Error("Method not implemented.");
   }
@@ -37,6 +40,10 @@ export class AuthService {
 
   getJwtToken() {
     return this.localStorage.retrieve('authenticationToken');
+  }
+
+  getUserName() {
+    return this.localStorage.retrieve('username');
   }
 
   isLoggedIn(): boolean {
