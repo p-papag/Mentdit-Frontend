@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListSubredditsComponent } from './list-subreddits.component';
+import { CreateSubmentditComponent } from './create-submentdit.component';
 
-describe('ListSubredditsComponent', () => {
-  let component: ListSubredditsComponent;
-  let fixture: ComponentFixture<ListSubredditsComponent>;
+describe('CreateSubmentditComponent', () => {
+  let component: CreateSubmentditComponent;
+  let fixture: ComponentFixture<CreateSubmentditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListSubredditsComponent ]
+      declarations: [ CreateSubmentditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListSubredditsComponent);
+    fixture = TestBed.createComponent(CreateSubmentditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

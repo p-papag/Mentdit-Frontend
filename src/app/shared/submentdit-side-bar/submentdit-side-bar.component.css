@@ -1,4 +1,4 @@
-.sidebar-view-subreddit {
+.sidebar-view-submentdit {
     width: 312px;
     height: 242px;
     --post-line-color: #ccc;
@@ -14,6 +14,6 @@
     margin-bottom: 10px;
   }
   
-  .sidebar-view-subreddit {
+  .sidebar-view-submentdit {
     height: 280px;
   }

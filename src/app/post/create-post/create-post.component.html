@@ -11,9 +11,9 @@
   
             <input type="text" class="form-control" [formControlName]="'url'" style="margin-top: 5px" placeholder="URL">
   
-            <select class="form-control" style="margin-top: 10px" [formControlName]="'subredditName'">
-              <option value="" selected disabled>Select Subreddit</option>
-              <option *ngFor="let subreddit of subreddits">{{subreddit.name}}</option>
+            <select class="form-control" style="margin-top: 10px" [formControlName]="'submentditName'">
+              <option value="" selected disabled>Select submentdit</option>
+              <option *ngFor="let submentdit of submentdits">{{submentdit.name}}</option>
             </select>
   
             <editor [formControlName]="'description'" [init]="{

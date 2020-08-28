@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { SubredditModel } from 'src/app/subreddit/subreddit-response';
+import { SubmentditModel } from 'src/app/submentdit/submentdit-response';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/shared/post.service';
-import { SubredditService } from 'src/app/subreddit/subreddit.service';
+import { SubmentditService } from 'src/app/submentdit/submentdit.service';
 import { throwError } from 'rxjs';
 import { CreatePostPayload } from './create-post.payload';
 
@@ -16,27 +16,27 @@ export class CreatePostComponent implements OnInit {
 
   createPostForm: FormGroup;
   postPayload: CreatePostPayload;
-  subreddits: Array<SubredditModel>;
+  submentdits: Array<SubmentditModel>;
 
   constructor(private router: Router, private postService: PostService,
-    private subredditService: SubredditService) {
+    private submentditService: SubmentditService) {
     this.postPayload = {
       postName: '',
       url: '',
       description: '',
-      subredditName: ''
+      submentditName: ''
     }
   }
 
   ngOnInit() {
     this.createPostForm = new FormGroup({
       postName: new FormControl('', Validators.required),
-      subredditName: new FormControl('', Validators.required),
+      submentditName: new FormControl('', Validators.required),
       url: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
     });
-    this.subredditService.getAllSubreddits().subscribe((data) => {
-      this.subreddits = data;
+    this.submentditService.getAllSubmentdits().subscribe((data) => {
+      this.submentdits = data;
     }, error => {
       throwError(error);
     });
@@ -44,7 +44,7 @@ export class CreatePostComponent implements OnInit {
 
   createPost() {
     this.postPayload.postName = this.createPostForm.get('postName').value;
-    this.postPayload.subredditName = this.createPostForm.get('subredditName').value;
+    this.postPayload.submentditName = this.createPostForm.get('submentditName').value;
     this.postPayload.url = this.createPostForm.get('url').value;
     this.postPayload.description = this.createPostForm.get('description').value;
 

@@ -1,0 +1,12 @@
+ 
+<div class="sidebar-view-submentdit">
+    <div style="color: black; font-weight: bold">Browse Submentdits</div>
+    <hr />
+    <span *ngFor="let submentdit of submentdits">
+        <span class="submentdit-text"><a href="/view-submentdit/{{submentdit.id}}">{{submentdit.name}}</a></span>
+        <hr />
+    </span>
+    <div style="text-align: center" *ngIf="displayViewAll">
+        <a style="font-weight: bold" routerLink="/list-submentdits">View All</a>
+    </div>
+</div>

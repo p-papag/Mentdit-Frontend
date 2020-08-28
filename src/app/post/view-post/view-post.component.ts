@@ -63,4 +63,4 @@ export class ViewPostComponent implements OnInit {
       throwError(error);
     });
   }
-
+}
